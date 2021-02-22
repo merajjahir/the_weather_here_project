@@ -16,7 +16,8 @@ const database = new Database("module.3_database.db");
 database.loadDatabase();
 
 // setting up the port and confermation massage of the server .
-app.listen(3000,() => {console.log("The server is up at 3000")});
+const port = process.env.PORT || 3000;
+app.listen(3000,() => {console.log(`The server is up at ${port}`)});
 
 //the parser to handel the json datas.
 app.use(express.json({limit:"1mb"}));
@@ -75,7 +76,8 @@ app.get("/weather/:latlong",async (request,response) =>{
         
         
         //the air quality url .
-        const air_url = `https://api.breezometer.com/air-quality/v2/current-conditions?lat=${lat}56&lon=${lon}&key=38b7a69076e84bc2a51aae0a617b897c`;
+        const air_key = process.env.API_KEY_TWO ;
+        const air_url = `https://api.breezometer.com/air-quality/v2/current-conditions?lat=${lat}56&lon=${lon}&key=${air_key}`;
         const air_res = await fetch(air_url);
         const air_data = await air_res.json();
 
