@@ -64,8 +64,8 @@ app.get("/weather/:latlong",async (request,response) =>{
         const lat = latlong[0];
         console.log(lat,lon);
         //for test  
-        //const api_url = `http://api.openweathermap.org/data/2.5/weather?lat=22.36&lon=91.81&APPID=01dddca90e62239016c34f7c50dd5cb1`;
-        //https://api.breezometer.com/air-quality/v2/current-conditions?lat=48.857456&lon=2.354611&key=38b7a69076e84bc2a51aae0a617b897c
+        //const api_url = `http://api.openweathermap.org/data/2.5/weather?lat=22.36&lon=91.81&APPID=`;
+        //https://api.breezometer.com/air-quality/v2/current-conditions?lat=48.857456&lon=2.354611&key=
 
 
         //the weather data
