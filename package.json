@@ -4,7 +4,7 @@
   "description": "now at the module 3 like real 3",
   "main": "main_server.js",
   "scripts": {
-    "start":"main_server.js",
+    "start":"node ./main_server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
