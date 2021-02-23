@@ -2,6 +2,9 @@
   "name": "module_3.1",
   "version": "1.0.0",
   "description": "now at the module 3 like real 3",
+  "engines": {
+    "node": "12.11.1"
+    },
   "main": "main_server.js",
   "scripts": {
     "start": "node main_server.js",
