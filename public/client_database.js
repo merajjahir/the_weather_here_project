@@ -28,43 +28,18 @@ async function  get_the_juice (){
               txt +=  "No air quality reading.";
 
         }else{
-            txt += `And the air condition is ${item.air.data.indexes.baqi.category}and the color that represent it is${item.air.data.indexes.baqi.color} and the dominant pollutant is ${item.air.data.indexes.baqi.dominant}`;
+            txt += `And the air condition is ${item.air_concern}and the color that represent it is${item.air_color} and the dominant pollutant is ${item.air.data.current.pollution.maincn||item.air.data.curernt.pollution.mainus}`;
         }
+
 
         L.marker([item.lat,item.long]).addTo(datamap).bindPopup(txt);
 
 
-        //this section is for the elements that get's pushed.
-        // const root = document.createElement("div");
-        // const mood = document.createElement("p");
-        // const geo = document.createElement("p");
-        // const date = document.createElement("p");
-        // const air_info = document.createElement("p");
-        // const weather_info = document.createElement("p"); 
-        
-            
-        // // mood.textContent = `mood: ${(item.input)}`;
-        // //this section is for latitude and longitude section the old way of doing thing's.
-        // geo.textContent = `${(item.lat)}`,`${(item.long)}`;
-        // const dateString = new Date(item.timestamp).toLocaleString();
-        // date.textContent = dateString;
+     
 
         
 
-        // //this section is for the apis .
-        // weather_info.textContent = `Here in  ${(item.weather_main_obj.name)} and longitude probebaly have with a temperatue of ${item.weather_main_obj.main.temp} degrees farenheit. `;
-        // air_info.textContent = `And the air condition is ${item.air.data.indexes.baqi.category}and the color that represent it is${item.air.data.indexes.baqi.color} and the dominant pollutant is ${item.air.data.indexes.baqi.dominant} `;
         
-        
-        // //appending the elements to the root div.
-        // root.append(mood,geo,date,air_info,weather_info,);
-        // root.style.backgroundColor = "lightgray";
-        // root.style.borderRadius = "2%";
-        // root.style.padding = "2%";
-        // root.style.marginTop = "1%";
-        
-        // //appending the root to the document body.
-        // document.body.append(root);
 
     }
     

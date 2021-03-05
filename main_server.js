@@ -17,7 +17,7 @@ database.loadDatabase();
 
 // setting up the port and confermation massage of the server .
 const port = process.env.PORT || 3000;
-app.listen(3000,() => {console.log(`The server is up at ${port}`)});
+app.listen(port,() => {console.log(`The server is up at ${port}`)});
 
 //the parser to handel the json datas.
 app.use(express.json({limit:"1mb"}));
@@ -58,14 +58,12 @@ app.get("/weather/:latlong",async (request,response) =>{
     
 
         const latlong= request.params.latlong.split(",");
-        console.log(request.params)
-        console.log(latlong)
+        console.log(request.params);
+        console.log(latlong);
         const lon =latlong[1];
         const lat = latlong[0];
-        console.log(lat,lon);
-        //for test  
-        //const api_url = `http://api.openweathermap.org/data/2.5/weather?lat=22.36&lon=91.81&APPID=`;
-        //https://api.breezometer.com/air-quality/v2/current-conditions?lat=48.857456&lon=2.354611&key=
+
+        
 
 
         //the weather data
@@ -77,12 +75,13 @@ app.get("/weather/:latlong",async (request,response) =>{
         
         //the air quality url .
         const air_key = process.env.API_KEY_TWO ;
-        const air_url = `https://api.breezometer.com/air-quality/v2/current-conditions?lat=${lat}56&lon=${lon}&key=${air_key}`;
+        const air_url = `https://api.airvisual.com/v2/nearest_city?lat=${lat}&lon=${lon}&key=${air_key}`;
         const air_res = await fetch(air_url);
         const air_data = await air_res.json();
 
         weather_res.json(air_data);
-        console.log(air_data);
+        
+        // console.log(air_data);
         
         const all_data = {
             weather:weather_data,
