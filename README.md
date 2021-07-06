@@ -1,5 +1,5 @@
 # the_weather_here_project
-### this is a project called weather here by **joe lee** and i learned it from the legendary **danial shiffman** 
+ this is a project called weather here by **joe lee** and i learned it from the legendary **danial shiffman** 
 > here i used :  
 
 - the navigator object and used it get the users location .  
